@@ -1,0 +1,25 @@
+{
+  "name": "apis_postgres",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run build\" \"npm run server\"",
+    "build": "tsc",
+    "server": "nodemon dist/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.6.2",
+    "@types/pg": "^8.11.10",
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7"
+  }
+}
