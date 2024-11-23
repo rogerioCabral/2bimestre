@@ -5,14 +5,14 @@ import {pool} from '../database'
 import {QueryResult} from 'pg'
 
 // funcao para retornar todos os pacientes
-const getPacientes = async(req: Request, res: Response): Promise<Response> => {
-    try{ // tratando exceção
-        const resposta: QueryResult = await pool.query('select * from paciente')
-        return res.status(200).json(resposta.rows)
+async function getPacientes(req: Request, res: Response): Promise<Response> {
+    try { // tratando exceção
+        const resposta: QueryResult = await pool.query('select * from paciente');
+        return res.status(200).json(resposta.rows);
     }
-    catch(error){
-        console.log(error)
-        return res.status(500).json(`Erro interno do servidor`)
+    catch (error) {
+        console.log(error);
+        return res.status(500).json(`Erro interno do servidor`);
     }
 }
 
